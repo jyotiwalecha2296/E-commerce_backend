@@ -17,18 +17,14 @@
       </a>
     </li>
 
-     <li class="nav-item">
+     <!-- <li class="nav-item">
       <a href="{{ url('/watch-page') }}" class="nav-link {{ (request()->is('watch-page')) ? 'active' : '' }}">
         <i class="lni lni-files"></i>
         <span class="name">Watch Page</span>
         <span class="hover-name">Watch Page</span>
       </a>
-    </li>
+    </li> -->
 
-
-
- 
- 
      <!-- General -->
      <li class="nav-item dropdown">
       <a href="#generalMenu" data-bs-toggle="collapse" class="nav-link has-arrow"  aria-expanded="{{ (request()->is('settings')) ? 'true' : '' }}{{(request()->is('menus')) ? 'true' : ''}} {{(request()->is('add-menu/*')) ? 'true' : ''}} {{(request()->is('edit-menu/*')) ? 'true' : ''}}{{ Route::is('videos.*') || Route::is('videos.*')  ? 'true' : '' }}">
