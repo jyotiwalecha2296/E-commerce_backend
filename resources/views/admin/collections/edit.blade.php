@@ -134,7 +134,7 @@
 
               <div class="col-sm-6 mb-6" >
                         <label for="rubber_. image" class="form-label">Gallery Image</label>
-                        <div class="gallery-images"></div> 
+                        <div class="gallery_image"></div> 
                         <p class="image-dimesion-label">For best results, use 900 px by 900 px image</p>
               </div>
             </div>            
@@ -339,7 +339,34 @@
     </div>
   {!! Form::close() !!}
 </div>
+
+@if($data->gallery_image != null)
+ <script>
+let gallery_images = [
+ <?php foreach(json_decode($data->gallery_image) as $key => $val){ ?>
+    {id: '<?php echo $val; ?>', src: '<?php echo $val; ?>'},
+      <?php } ?>
+];
+$('.gallery_image').imageUploader({
+    preloaded: gallery_images,
+    imagesInputName: 'gallery_image',
+    preloadedInputName: 'old_gallery_image'
+});  
+</script>
+@else
 <script>
+  $('.gallery_image').imageUploader({
+    preloaded: [],
+    imagesInputName: 'gallery_image',
+    preloadedInputName: 'old_gallery_image',
+    label: 'Drag & Drop files gallery Images here or click to browse'
+  });
+</script>
+@endif
+
+<script>
+
+
   function loadbanner(){
     $('#banner').show();
     $('#banner').attr('src', URL.createObjectURL(event.target.files[0]));

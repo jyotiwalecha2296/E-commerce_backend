@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Eisbach Watches'),
+    'name' => env('APP_NAME', 'E-Commerce'),
 
     /*
     |--------------------------------------------------------------------------

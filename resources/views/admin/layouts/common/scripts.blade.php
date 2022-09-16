@@ -1,7 +1,7 @@
-<script src="{{ asset('public/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('public/js/dashboard.js') }}"></script>
-<script type="text/javascript" charset="utf8" src="{{ asset('public/js/jquery.dataTables.min.js') }}"></script>
-<script type="text/javascript" charset="utf8" src="{{ asset('public/js/dataTables.bootstrap5.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('js/dashboard.js') }}"></script>
+<script type="text/javascript" charset="utf8" src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+<script type="text/javascript" charset="utf8" src="{{ asset('js/dataTables.bootstrap5.min.js') }}"></script>
 <script>
     $('.show_confirm').click(function(event) {
           var form =  $(this).closest("form");

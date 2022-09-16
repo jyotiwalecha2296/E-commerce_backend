@@ -1,6 +1,6 @@
 <div class="header">
     <div class="header-logo" style="padding-left:1rem;display: block;">
-      <img src="{{ asset('public/images/logo/dummy-logo-white.png') }}" alt="E-Commerce Logo" title="E-Commerce">
+      <img src="{{ asset('images/logo/dummy-logo-white.png') }}" alt="E-Commerce Logo" title="E-Commerce">
     </div>
     <div class="header-search">
         <span class="button-menu"> 
@@ -71,11 +71,11 @@
     <div class="offcanvas-body">        
         <div class="profile-wrap">
            <div class="profile-img">  
-                <img src="{{ asset('public/images/user-icon-image.png') }}" alt="user image"> 
+                <img src="{{ asset('images/user-icon-image.png') }}" alt="user image"> 
            </div>
            <div class="profile-info">
                 <p class="fs-6 mb-2">Admin User</p>
-                <p class="mb-1">admin@itsolutionstuff.com</p>
+                <p class="mb-1">admin@weballures.com</p>
                 <p class="mb-1"><span>User ID: </span><span>123456789</span></p>
                 <div class="links-wrap">                  
                     <a href="{{ route('admin.profile') }}" >
@@ -93,8 +93,8 @@
             <div class="card-info">
                 <div class="title mb-2">Website Information</div>
                 <p class="mb-1"><span class="me-2">Website Title: </span><span>E-Commerce</span></p>
-                <p class="mb-1"><span class="me-2">Email: </span><span>hello@dummy.com</span></p>
-                <p class="mb-1"><span class="me-2">Phone: </span><span>0097345345674</span></p>
+                <p class="mb-1"><span class="me-2">Email: </span><span>hello@weballures.com</span></p>
+                <p class="mb-1"><span class="me-2">Phone: </span><span>009733343234</span></p>
                 <div class="links-wrap">                  
                     <a href="{{ url('/settings') }}" >
                         <span class="me-2">Update Settings</span>

@@ -27,6 +27,7 @@ return new class extends Migration
          $table->longtext('night_view_image')->nullable();
          $table->longtext('strap_image')->nullable();
          $table->longtext('gallery_image')->nullable();
+         $table->longtext('night_gallery_images')->nullable();
          $table->string('collection_id');
          $table->string('product_type');
          $table->string('product_line_type')->nullable();

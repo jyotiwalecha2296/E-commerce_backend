@@ -107,6 +107,24 @@ class CollectionController extends Controller
             $parent_id="0";
             $parent="None";
         }
+
+          $gallery_image_names = array();
+            $gallery_images='gallery_image';             
+            if($request->hasFile('gallery_image')){
+              $gallery_image_names = [];
+              foreach($request->file('gallery_image') as $image){
+                 
+                  $destinationPath = 'public/collection/gallery_image/';
+                  $filename = $image->getClientOriginalName();
+                  $image->move($destinationPath, $filename);
+                  array_push($gallery_image_names, env('APP_URL').'public/collection/gallery_image/'.$filename);          
+              }
+              $gallery_image_names = json_encode($gallery_image_names);
+            }else{
+              $gallery_image_names=null;  
+            }
+
+
         $savedata = new Collection();
         $savedata->name = $request->name; 
         $savedata->slug = str_slug($request->name);
@@ -120,6 +138,7 @@ class CollectionController extends Controller
         $savedata->collection_page_status=$request->collection_page_status;
         $savedata->video_link=$request->video;
         $savedata->back_video_link=$request->back_video_link;
+        $savedata->gallery_image=$gallery_image_names; 
         $savedata->content=$request->content;
         $savedata->tagline=$request->tagline;
         $savedata->save();
@@ -255,6 +274,32 @@ class CollectionController extends Controller
             $parent="None";
         }
 
+
+        
+         $gallery_image_names = array();
+          $gallery_imageoldgallery=array();
+          $oldgallery_imagear=$request->old_gallery_image;
+
+          if($oldgallery_imagear != null){  
+             foreach($oldgallery_imagear as $oldmerchgallimg){ 
+                if(filter_var($oldmerchgallimg, FILTER_VALIDATE_URL)) {
+                  $gallery_imageoldgallery[]=$oldmerchgallimg;
+                  array_push($gallery_image_names,$oldmerchgallimg); 
+               }
+             }
+          }
+         
+          if($request->hasFile('gallery_image')){
+            foreach($request->file('gallery_image') as $image)
+              {
+                  $destinationPath = 'public/collection/gallery_image/';
+                  $filename = $image->getClientOriginalName();
+                  $image->move($destinationPath, $filename);
+                  array_push($gallery_image_names,env('APP_URL').'public/collection/gallery_image/'.$filename);     
+              }         
+          }
+
+
         $updatedata = Collection::find($id);        
         $updatedata->name = $request->name; 
         $updatedata->slug = str_slug($request->name);
@@ -269,6 +314,7 @@ class CollectionController extends Controller
         $updatedata->video_link=$request->video;
         $updatedata->back_video_link=$request->back_video_link;
         $updatedata->content=$request->content;
+        $updatedata->gallery_image=$gallery_image_names;
         $updatedata->tagline=$request->tagline;
         $updatedata->save();
 

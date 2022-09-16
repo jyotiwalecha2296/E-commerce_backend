@@ -1,5 +1,9 @@
 @extends('admin.layouts.app') 
 @section('content')
+
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link type="text/css" rel="stylesheet" href="{{asset('public/multipleimages/image-uploader.min.css')}}">
+<script type="text/javascript" src="{{asset('public/multipleimages/image-uploader.min.js')}}"></script>
   <div class="container-fluid pt-5">
     <span class="title-data" id="titleData" data-link="collections/create" data-parent="collections" data-title="Create collection"></span>
     {!! Form::open(['route'=>['collections.store'], 'method' => 'POST','files'=>true,'autocomplete'=>'false', 'id'=>'form','data-parsley-validate' => '','class'=>'form-horizontal','name'=>'form']) !!} 
@@ -98,30 +102,39 @@
               </div>
 
               <div class="form-group row">
-                <div class="col-sm-12 mb-3">           
+
+                <div class="col-sm-6 mb-3">           
                   <label for="description" class="form-label">Description</label>                         
                   <textarea name="description" id="description" class="form-control" placeholder="Please write description here" rows="2">{{ old('description') }}</textarea> 
                    <script>
-                CKEDITOR.replace('description');
-                $("form").submit(function (e) {
-                var messageLength = CKEDITOR.instances['description'].getData().replace(/<[^>]*>/gi, '').length;
-                if (!messageLength) {
-                  swal({
-                    title: "You Missed Something!",
-                    text: "Please write description ",
-                    icon: "warning",
-                    button: "close",
-                    });
-                    e.preventDefault();
-                  }
-                });
-              </script>
+	                CKEDITOR.replace('description');
+	                $("form").submit(function (e) {
+	                var messageLength = CKEDITOR.instances['description'].getData().replace(/<[^>]*>/gi, '').length;
+	                if (!messageLength) {
+	                  swal({
+	                    title: "You Missed Something!",
+	                    text: "Please write description ",
+	                    icon: "warning",
+	                    button: "close",
+	                    });
+	                    e.preventDefault();
+	                  }
+	                });
+	              </script>
                   @error('description')
                   <span class="invalid-feedback" role="alert">
                     {{ $message }}
                   </span>
                   @enderror 
-                </div>            
+                </div> 
+
+                
+               <div class="col-sm-6 mb-3" >
+                      <label for="gallery_image" class="form-label">Gallery Image</label>                      
+                      <div class="gallery_image"></div>  
+                      <p class="image-dimesion-label">For best results, use 900 px by 900 px image</p>                     
+                    </div>
+
               </div>                        
             </div> 
           </div>
@@ -303,6 +316,13 @@
     {!! Form::close() !!}              
   </div>
   <script>
+  	$('.gallery_image').imageUploader({
+    preloaded: [],
+    imagesInputName: 'gallery_image',
+    preloadedInputName: 'gallery_image',
+    label: 'Drag & Drop files here or click to browse'
+  });
+
     function loadbanner(){
       $('#banner').show();
       $('#banner').attr('src', URL.createObjectURL(event.target.files[0]));

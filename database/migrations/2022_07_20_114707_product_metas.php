@@ -17,6 +17,7 @@ return new class extends Migration
          $table->increments('id');
          $table->integer('product_id')->unsigned(); 
          $table->longtext('gallery_images')->nullable();
+         $table->longtext('night_gallery_images')->nullable();
          $table->longtext('story_title')->nullable();
          $table->longtext('story_description')->nullable();
          $table->longtext('story_image')->nullable();

@@ -23,7 +23,14 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+                if(!Auth::user()->is_email_verified)
+                {
+                    auth()->logout();
+                    return redirect()->route('login')
+                    ->with('message', 'You need to confirm your account. We have sent you an activation code, please check your email.');
+                }
+               // return redirect(RouteServiceProvider::HOME);
+                return redirect('/dashboard'); 
             }
         }
 
