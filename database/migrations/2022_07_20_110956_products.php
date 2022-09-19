@@ -29,6 +29,7 @@ return new class extends Migration
          $table->longtext('gallery_image')->nullable();
          $table->longtext('night_gallery_images')->nullable();
          $table->string('collection_id');
+         $table->integer('parent_id')->default(0);
          $table->string('product_type');
          $table->string('product_line_type')->nullable();
          $table->integer('featured_product_position');
