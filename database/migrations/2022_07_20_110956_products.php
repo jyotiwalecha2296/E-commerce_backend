@@ -33,6 +33,7 @@ return new class extends Migration
          $table->string('product_type');
          $table->string('product_line_type')->nullable();
          $table->integer('featured_product_position');
+         $table->enum('featured_product_status',['0','1'])->default('0');       
          $table->enum('is_steel',['0','1'])->default('0');       
          $table->enum('is_rubber',['0','1'])->default('0');       
          $table->enum('status',['0','1'])->default('1');       
