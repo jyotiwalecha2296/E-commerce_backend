@@ -33,7 +33,7 @@
             @foreach ($data as  $detail)            
             <tr>
               <td>{{ $loop->index + 1}}</td>
-              <td><img src="{{ asset($detail->image ?: 'public/images/user.png') }}" height="45" width="50"/></td>
+              <td><img src="{{ asset($detail->image ?: 'images/user.png') }}" height="45" width="50"/></td>
               <td>{{ucwords($detail->name)}}</td>
               <td>{{$detail->email}}</td>              
               <td>{{$detail->country_code}}{{$detail->contact_no}}</td>
