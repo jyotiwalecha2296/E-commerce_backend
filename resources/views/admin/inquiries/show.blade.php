@@ -19,7 +19,7 @@
 
                       </div>
                       <div class="back_btn view_page text-start mt-3">
-                          <a class="btn btn-primary float-right" href="/crm/inquiries">Back</a>
+                          <a class="btn btn-primary float-right" href="/inquiries">Back</a>
                       </div>
        </div>
     </div>        

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 
 class OrdersSeeder extends Seeder
@@ -26,6 +27,7 @@ class OrdersSeeder extends Seeder
             'sub_total' => '30',
             'final_total' => '30',
             'payment_method' => 'COD',
+            'created_at'=> Carbon::now(),
         ]);
     }
 }
