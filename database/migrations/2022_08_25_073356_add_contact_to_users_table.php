@@ -14,12 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-             $table->string('first_name');
-             $table->string('last_name');
-             $table->string('country_code');
-             $table->string('contact_no');
-             $table->enum('status', ['Mr', 'Mrs', 'Ms']);
-             $table->tinyInteger('terms');
+             $table->string('first_name')->nullable();
+             $table->string('last_name')->nullable();
+             $table->string('country_code')->nullable();
+             $table->string('contact_no')->nullable();
+             $table->enum('status', ['Mr', 'Mrs', 'Ms'])->nullable();
+             $table->tinyInteger('terms')->nullable();
         });
     }
 

@@ -47,13 +47,6 @@
           </a>
         </li>
 
-        <li>
-          <a href="{{ url('/videos') }}" class="nav-link px-0 {{ Route::is('videos.*') || Route::is('videos.*')  ? 'active' : '' }}">
-             <i class="lni lni-video"></i>
-            <span class="d-none d-sm-inline">Videos</span>
-          </a>
-        </li>
-
 
       </ul>
     </li>
@@ -163,13 +156,7 @@
             <i class="lni lni-list"></i>         
             <span class="d-none d-sm-inline">Listing All Users </span>           
           </a>
-        </li>        
-        <li>
-          <a href="{{ url('/subscribed-users') }}" class="nav-link px-0 {{ Route::is('subscribed-users.*') || Route::is('subscribed-users.*')  ? 'active' : '' }}">
-            <i class="lni lni-envelope"></i>
-            <span class="d-none d-sm-inline">Subscribed Users</span>
-          </a>
-        </li>
+        </li>  
       </ul>
     </li>
 
