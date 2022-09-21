@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->tinyInteger('gdrp')->default(0);
-            $table->timestamp('birth_date')->nullable();
+            $table->date('birth_date')->nullable();
         });
     }
 

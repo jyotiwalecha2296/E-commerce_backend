@@ -1,8 +1,8 @@
 @extends('admin.layouts.app') 
 @section('content')
 <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link type="text/css" rel="stylesheet" href="{{asset('public/multipleimages/image-uploader.min.css')}}">
-<script type="text/javascript" src="{{asset('public/multipleimages/image-uploader.min.js')}}"></script>
+<link type="text/css" rel="stylesheet" href="{{asset('multipleimages/image-uploader.min.css')}}">
+<script type="text/javascript" src="{{asset('multipleimages/image-uploader.min.js')}}"></script>
 <span class="title-data" id="titleData" data-link="products/create" data-parent="products" data-title="Add Product"></span> 
 <div class="container-fluid pt-5">
   <form role="form" data-parsley-validate="" method="POST" action="{{url('save_product')}}"  id="add_product_form" name="product_form" enctype="multipart/form-data">
@@ -638,7 +638,7 @@
                 <div class="card-body">
                   <div class="form-group row">
                     <div class="col-sm-12 mb-6" >
-                       <div class="merchandising_images"></div> 
+                       <div class="merchandising_images"></div>
                     </div>
                   </div>
                 </div>

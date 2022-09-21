@@ -54,6 +54,7 @@ Route::namespace("App\Http\Controllers\Admin")->middleware(['auth', 'user-access
 
 
     Route::get('/products', 'ProductController@index')->name('products.index');
+    Route::get('/products/all', 'ProductController@index');
     Route::get('/products/create', 'ProductController@create');
     Route::post('/save_product', 'ProductController@saveproduct');
     Route::get('/products/{id}/edit', 'ProductController@edit');

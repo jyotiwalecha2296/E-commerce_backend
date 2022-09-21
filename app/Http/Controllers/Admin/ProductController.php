@@ -422,6 +422,7 @@ class ProductController extends Controller
     public function edit($id){
       $collection_list = Collection::get(); 
       $data = Product::join('product_metas', 'products.id', '=', 'product_metas.product_id')->where('products.id',$id)->first(['products.*', 'product_metas.*']);  
+      dd($data);
       
       $steel_product_id=null;
       $steel_price=null;

@@ -21,9 +21,9 @@ return new class extends Migration
          $table->longtext('story_title')->nullable();
          $table->longtext('story_description')->nullable();
          $table->longtext('story_image')->nullable();
-         $table->json('tech_data')->nullable();   
-         $table->json('key_features')->nullable(); 
-         $table->json('merchandising_images')->nullable();                    
+         $table->longtext('tech_data')->nullable();   
+         $table->longtext('key_features')->nullable(); 
+         $table->longtext('merchandising_images')->nullable();                    
          $table->string('meta_title')->nullable();
          $table->string('meta_keywords')->nullable();
          $table->longtext('meta_description')->nullable();             
