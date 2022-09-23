@@ -15,8 +15,7 @@ class CouponController extends Controller
     public function index()
     {
         $data=Coupon::orderBy('id','DESC')->get(); 
-        return view("admin.coupons.index")->with('data',$data);
-       
+        return view("admin.coupons.index")->with('data',$data);     
     }
 
     /**
