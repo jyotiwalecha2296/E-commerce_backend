@@ -15,8 +15,7 @@ class CouponController extends Controller
     public function index()
     {
         $data=Coupon::orderBy('id','DESC')->get(); 
-        return view("admin.coupons.index")->with('data',$data);
-       
+        return view("admin.coupons.index")->with('data',$data);     
     }
 
     /**
@@ -40,8 +39,8 @@ class CouponController extends Controller
         $validator = \Validator::make($request->all(), [
                     'code'=>'required|unique:coupons,code',
                     'discount_percentage'=>'required',
-                    'start_date'=>'required|date_format:Y-m-d|before:today',   
-                    'end_date'=>'required|date_format:Y-m-d|before:today',                    
+                    'start_date'=>'required|date_format:Y-m-d|after:today',   
+                    'end_date'=>'required|date_format:Y-m-d|after:today',                    
                     'status'=>'required',  
                     'minimum_amount' =>'required'    
         ]);
@@ -101,7 +100,7 @@ class CouponController extends Controller
                     'code' => 'required|unique:coupons,code,' . $id, 
                     'discount_percentage'=>'required',
                     'start_date'=>'required|date_format:Y-m-d',   
-                    'end_date'=>'required|date_format:Y-m-d|before:today',                     
+                    'end_date'=>'required|date_format:Y-m-d|after:today',                     
                     'status'=>'required',
         ]);
         if($validator->fails()) 

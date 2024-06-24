@@ -128,7 +128,7 @@
           </a>
         </li>
         <li class="">
-          <a href="{{ url('/products') }}" class="nav-link px-0 nav-link {{(request()->is('products')) ? 'active' : ''}}{{(request()->is('products/create')) ? 'active' : ''}}{{(request()->is('products/*/edit')) ? 'active' : ''}}">
+          <a href="{{ url('/products/all') }}" class="nav-link px-0 nav-link {{(request()->is('products')) ? 'active' : ''}}{{(request()->is('products/create')) ? 'active' : ''}}{{(request()->is('products/*/edit')) ? 'active' : ''}}">
             <i class="lni lni-list"></i>         
             <span class="d-none d-sm-inline">Listing All Products </span>           
           </a>
